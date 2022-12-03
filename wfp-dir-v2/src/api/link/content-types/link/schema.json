@@ -1,0 +1,46 @@
+{
+  "kind": "collectionType",
+  "collectionName": "links",
+  "info": {
+    "singularName": "link",
+    "pluralName": "links",
+    "displayName": "Link",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "url": {
+      "type": "string",
+      "unique": false,
+      "required": true
+    },
+    "category": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::category.category",
+      "inversedBy": "links"
+    },
+    "description": {
+      "type": "text"
+    },
+    "new": {
+      "type": "boolean",
+      "default": false
+    },
+    "updated": {
+      "type": "boolean",
+      "default": false
+    },
+    "last_updated": {
+      "type": "date"
+    }
+  }
+}
